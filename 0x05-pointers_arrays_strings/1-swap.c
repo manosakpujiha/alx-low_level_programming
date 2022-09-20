@@ -1,14 +1,18 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * swap_int - swap two integers
- * @a: parameter
- * @b: parameter 2
- */
-
+  * swap_int - Swaps the values of two integers
+  *
+  * @a: An integer to swap
+  * @b: Another integer to swap
+  *
+  * Return: void
+  */
 void swap_int(int *a, int *b)
 {
-	int tmp = *a;
+	int aux;
+
+	aux = *a;
 	*a = *b;
-	*b = tmp;
+	*b = aux;
 }
