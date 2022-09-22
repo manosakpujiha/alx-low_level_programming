@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  *_strncpy- concatenates two strings
  *@dest: A pointer to a character that will be changed
