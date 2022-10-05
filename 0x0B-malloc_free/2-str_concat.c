@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 /**
  * str_concat - Entry point
  *@s1: string 1
