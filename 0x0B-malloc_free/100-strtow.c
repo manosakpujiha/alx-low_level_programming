@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 /**
  * strtow - concatenates all the arguments of your program
  *@str: string
