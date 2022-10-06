@@ -62,14 +62,14 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(98);
-		for (i = 1; i < argc; i++)
-		{
-			if (_isdigit(argv[i]))
-			{
-				printf("Error\n");
-				exit(98);
-			}
-		}
-		return (0);
 	}
+	for (i = 1; i < argc; i++)
+	{
+		if (_isdigit(argv[i]))
+		{
+			printf("Error\n");
+			exit(98);
+		}
+	}
+	return (0);
 }
