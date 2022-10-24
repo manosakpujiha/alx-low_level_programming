@@ -7,7 +7,6 @@
 size_t print_listint_safe(const listint_t *head)
 {
     size_t a;
-
     listint_t *b = (listint_t *)head;
     a = 0;
     while (b && b > b->next)
