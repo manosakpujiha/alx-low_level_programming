@@ -1,42 +1,38 @@
 #include "lists.h"
-
 /**
- * find_listint_loop - finds the loop in a linked list.
- * @head: head of a list.
+ * _check_and_find - Check the list and return the looping node
+ * @head: head of list to check
+ * @prev: prev node on the list
  *
- * Return: the address of the node where the loop starts.
+ * Return: Node that loops, or NULL
+ */
+listint_t *_check_and_find(listint_t *head, listint_safe *prev)
+{
+	listint_safe node, *tmp;
+
+	if (head->next == NULL)
+		return (NULL);
+
+	node.next = prev;
+	node.addy = head;
+	tmp = node.next;
+	while (tmp != NULL && tmp->addy != head)
+		tmp = tmp->next;
+	if (tmp != NULL)
+		return (head);
+
+	return (_check_and_find(head->next, &node));
+}
+/**
+ * find_listint_loop - find if list has a loop
+ * @head: head of the list
+ *
+ * Return: Node that loops, or NULL
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *p2;
-	listint_t *prev;
+	if (head == NULL)
+		return (NULL);
 
-	p2 = head;
-	prev = head;
-	while (head && p2 && p2->next)
-	{
-		head = head->next;
-		p2 = p2->next->next;
-
-		if (head == p2)
-		{
-			head = prev;
-			prev =  p2;
-			while (1)
-			{
-				p2 = prev;
-				while (p2->next != head && p2->next != prev)
-				{
-					p2 = p2->next;
-				}
-				if (p2->next == head)
-					break;
-
-				head = head->next;
-			}
-			return (p2->next);
-		}
-	}
-
-	return (NULL);
+	return (_check_and_find(head, NULL));
 }
