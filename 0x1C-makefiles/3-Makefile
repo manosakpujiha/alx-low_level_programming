@@ -2,8 +2,8 @@
 
 # Setting variables
 CC = gcc
-SRC = main.c holberton.c
-NAME = holberton
+SRC = main.c school.c
+NAME = school
 OBJ = $(SRC:.c=.o) # Substitution References
 RM = rm -f
 
@@ -13,7 +13,7 @@ RM = rm -f
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-# This is declare to making this rules a prerequisite of the special target
+# This is declared to make these rules prerequisite of the special target
 .PHONY: clean oclean fclean re
 
 # Deletes all Emacs and Vim temporary files along with the executable
